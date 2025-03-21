@@ -65,7 +65,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section className="py-24 text-white bg-gradient-to-b from-[#3C3C7B] to-[#4E4E8E]">
+    <section id='projects' className="py-24 text-white bg-gradient-to-b from-[#3C3C7B] to-[#4E4E8E]">
       <div className="container mx-auto px-8 text-center">
         <h2 className="section-title">My Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
