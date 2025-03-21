@@ -1,15 +1,16 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* Define theme variables */
 :root {
   --background: #ffffff;
   --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --primary-color: #5e4a91; /* Purple */
+  --secondary-color: #21d07a; /* Green */
+  --accent-color: #e91e63; /* Pink */
+  --border-color: #cccccc;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -20,7 +21,65 @@
 }
 
 body {
-  background: var(--background);
+  background: radial-gradient(circle at top left, #1d1841, #0a0a0a);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Grid overlay for subtle effect */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.05) 1px,
+    transparent 1px
+  );
+  background-size: 50px 50px;
+  opacity: 0.1;
+  pointer-events: none;
+}
+
+
+
+/* Button styles */
+.button-primary {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: white;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: 0.3s ease-in-out;
+}
+
+.button-primary:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.section-title {
+  @apply relative mx-auto px-6 py-2 text-white text-lg font-semibold bg-[#120E30] rounded-lg shadow-md inline-block mb-10;
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 60px; /* Adjust width of side lines */
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.section-title::before {
+  left: -70px; /* Adjust spacing from title */
+}
+
+.section-title::after {
+  right: -70px; /* Adjust spacing from title */
 }
