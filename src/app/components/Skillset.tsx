@@ -15,7 +15,7 @@ const Skills = () => {
   ];
 
   return (
-    <section className="py-24 text-white bg-gradient-to-b from-[#1D1841] to-[#2B2B63] overflow-hidden">
+    <section className="py-24 overflow-hidden">
       <div className="container mx-auto px-8 text-center">
         <h2 className="section-title">My Skills</h2>
         <Marquee speed={50} gradient={false} className="overflow-hidden" style={{minHeight:'180px'}}>
@@ -23,7 +23,7 @@ const Skills = () => {
             {skills.map((skill, index) => (
               <div
                 key={index}
-                className="flex flex-col items-center bg-[#251E52] p-6 rounded-xl shadow-lg shadow-[#4C1D95]/40 border border-[#5E4A91] mx-4 hover:scale-105 transition-all duration-300"
+                className="flex flex-col items-center container-bg p-6 rounded-xl shadow-lg shadow-[#4C1D95]/40 border border-[#5E4A91] mx-4 hover:scale-105 transition-all duration-300"
                 style={{ minWidth: "160px"}}
               >
                 <img

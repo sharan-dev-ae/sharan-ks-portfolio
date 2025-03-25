@@ -59,7 +59,7 @@ const Education = () => {
   return (
     <section
       ref={sectionRef}
-      className="py-24 text-white bg-gradient-to-b from-[#3C3C7B] to-[#4E4E8E] overflow-hidden"
+      className="py-24 overflow-hidden"
     >
       <div className="container mx-auto px-8 text-center max-w-full overflow-hidden">
         <h2 className="section-title">My Education</h2>

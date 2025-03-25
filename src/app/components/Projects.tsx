@@ -65,14 +65,14 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id='projects' className="py-24 text-white bg-gradient-to-b from-[#3C3C7B] to-[#4E4E8E]">
+    <section id='projects'>
       <div className="container mx-auto px-8 text-center">
         <h2 className="section-title">My Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-[#2B2B63] p-6 rounded-lg shadow-md transform transition-all hover:scale-105 hover:shadow-xl relative border-2 border-transparent hover:border-[#5e4a91] hover:shadow-[#5e4a91] hover:shadow-lg"
+              className="container-bg p-6 rounded-lg shadow-md transform transition-all hover:scale-105 hover:shadow-xl relative border-2 border-transparent hover:border-[#5e4a91] hover:shadow-[#5e4a91] hover:shadow-lg"
             >
               <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
               <p className="text-lg text-gray-400 mb-4">

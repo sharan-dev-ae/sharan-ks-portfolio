@@ -3,15 +3,78 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Define theme variables */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-  --primary-color: #5e4a91; /* Purple */
-  --secondary-color: #21d07a; /* Green */
-  --accent-color: #e91e63; /* Pink */
-  --border-color: #cccccc;
+  --background-from: #1c2bd6; /* Slightly lighter dark blue at the top */
+  --background-to: #66ccff;   /* Light blue at the bottom */
+  --foreground: #ffffff;       /* Dark text */
+  --primary-color: #5e4a91;   /* Purple for primary elements */
+  --secondary-color: #21d07a; /* Green for accents */
+  --accent-color: #4fa3ff;    /* Pink for highlights and accents */
+  --border-color: #cccccc;    /* Light gray borders */
+  --link-color: #005f99;      /* Blue for links */
+  --button-background: #21d07a; /* Green button background */
+  --button-hover: #18b15f;    /* Green hover state */
+  --background-container: #1c2bd6; 
+  --box-shadow-container:0 4px 8px rgba(255, 255, 255, 0.15); 
+  --custom-border-color: #1a2fe0;
 }
+
+body {
+  background: linear-gradient(to bottom, var(--background-from), var(--background-to));
+  color: var(--foreground);
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease-in-out;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+.container-bg {
+  background-color: var(--background-container);
+  box-shadow: var(--box-shadow-container);
+  border: 2px solid var(--custom-border-color); 
+}
+
+/* Links */
+a {
+  color: var(--foreground);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--accent-color);
+}
+
+/* Buttons */
+/* button {
+  background-color: var(--button-background);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--button-hover);
+} */
+
+/* Sections with borders */
+section {
+  /* border-bottom: 2px solid var(--border-color); */
+  padding: 20px 0;
+}
+
+/* Header */
+header {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
 
 @media (prefers-color-scheme: dark) {
   :root {
@@ -19,35 +82,6 @@
     --foreground: #ededed;
   }
 }
-
-body {
-  background: radial-gradient(circle at top left, #1d1841, #0a0a0a);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-  min-height: 100vh;
-  overflow-x: hidden;
-  position: relative;
-}
-
-/* Grid overlay for subtle effect */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: radial-gradient(
-    rgba(255, 255, 255, 0.05) 1px,
-    transparent 1px
-  );
-  background-size: 50px 50px;
-  opacity: 0.1;
-  pointer-events: none;
-}
-
-
-
 /* Button styles */
 .button-primary {
   background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
@@ -63,7 +97,7 @@ body::before {
 }
 
 .section-title {
-  @apply relative mx-auto px-6 py-2 text-white text-lg font-semibold bg-[#120E30] rounded-lg shadow-md inline-block mb-10;
+  @apply relative mx-auto px-6 py-2 text-white text-lg font-semibold bg-[#0718a8] rounded-lg shadow-md inline-block mb-10;
 }
 
 .section-title::before,
@@ -71,15 +105,25 @@ body::before {
   content: "";
   position: absolute;
   top: 50%;
-  width: 60px; /* Adjust width of side lines */
+  width: 60px; 
   height: 2px;
-  background: rgba(255, 255, 255, 0.2);
+  background: #1c2bd6;
 }
 
 .section-title::before {
-  left: -70px; /* Adjust spacing from title */
+  left: -70px; 
 }
 
 .section-title::after {
-  right: -70px; /* Adjust spacing from title */
+  right: -70px; 
+}
+.rounded-buttons {
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  background-color: inherit;
+  transition: background-color 0.2s ease;
+}
+.rounded-buttons:hover {
+  background-color: #e60000;
 }

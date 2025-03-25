@@ -23,7 +23,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-<section className="py-24 text-white bg-gradient-to-b from-[#2B2B63] to-[#3C3C7B]">
+<section className="py-24">
   <div className="container mx-auto px-8 text-center">
     <h2 className="section-title">My Experience</h2>
 

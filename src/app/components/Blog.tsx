@@ -42,7 +42,7 @@ const blogs = [
 
 const BlogSection = () => {
   return (
-    <section id='blog' className="py-24 text-white bg-gradient-to-b from-[#1D1841] to-[#2B2B63]">
+    <section id='blog' className="py-24">
       <div className="container mx-auto px-8 text-center">
         <h2 className="section-title text-4xl mb-12">My Blog</h2>
 
