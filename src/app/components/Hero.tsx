@@ -5,11 +5,10 @@ const Hero = () => {
   return (
     <section
       className="flex items-center justify-center min-h-screen bg-cover bg-center text-white"
-      style={{ backgroundImage: "url(/images/hero-bg.jpg)" }}
     >
       <div className="flex w-full px-8 md:px-16 overflow-hidden justify-center items-center">
         <div className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center mb-12">
-          <h1 className="text-6xl font-bold mb-4">Hi, I'm Sharan</h1>
+          <h1 className="text-6xl font-bold mb-4">Hi, Im Sharan</h1>
           <p className="text-xl mb-6">
             Full Stack Developer | Passionate about building scalable web
             applications
