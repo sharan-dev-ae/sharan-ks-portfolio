@@ -9,25 +9,20 @@ const Hero = () => {
         <div
           className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center mb-12 relative"
           style={{
-            backgroundImage: "url('/images/blue-slash-2.png')", // Replace with your background image path
+            backgroundImage: "url('/images/blue-slash-2.png')", 
             backgroundSize: "cover",
             backgroundPosition: "center",
             minHeight: "75vh", // Adjust height as needed
           }}
         >
-          {/* Content inside the background */}
           <div
             className="relative z-10 px-8 py-12"
             style={{ marginLeft: "60px" }}
           >
             <h1 className="text-5xl font-bold mb-8 text-black">
               Hi, I&apos;m{" "}
-              <span className="text-7xl text-white ">Sharan K Shaji</span>
+              <span className="text-7xl text-white ">Sharan</span>
             </h1>
-
-            {/* <p className="text-xl mb-6">
-              Full Stack Developer | Passionate about building scalable web applications
-            </p> */}
             <div>
               <div className="flex space-x-6">
                 {/* Social Media Icons */}
