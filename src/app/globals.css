@@ -4,87 +4,66 @@
 @tailwind utilities;
 
 :root {
-  --background-from: #1c2bd6; /* Slightly lighter dark blue at the top */
-  --background-to: #66ccff;   /* Light blue at the bottom */
-  --foreground: #ffffff;       /* Dark text */
-  --primary-color: #5e4a91;   /* Purple for primary elements */
-  --secondary-color: #21d07a; /* Green for accents */
-  --accent-color: #4fa3ff;    /* Pink for highlights and accents */
-  --border-color: #cccccc;    /* Light gray borders */
-  --link-color: #005f99;      /* Blue for links */
-  --button-background: #21d07a; /* Green button background */
-  --button-hover: #18b15f;    /* Green hover state */
-  --background-container: #1c2bd6; 
-  --box-shadow-container:0 4px 8px rgba(255, 255, 255, 0.15); 
-  --custom-border-color: #1a2fe0;
+  --primary-color: #1c2bd6; /* Blue color for divs and elements */
+  --foreground: #333b55; /* Dark gray-blue for font color */
+  --accent-color: #f0f0f0; /* Light Gray for softer accents */
+  --container-bg: #f7f7f7; /* Light Gray for container background */
+  --custom-border-color: #1c2bd6; /* Blue border */
+  --box-shadow-container: 0 4px 10px rgba(28, 43, 214, 0.2); /* Light shadow for containers */
+  --text-color:#ffffff
 }
 
 body {
-  background: linear-gradient(to bottom, var(--background-from), var(--background-to));
-  color: var(--foreground);
+  background-color: var(--container-bg); /* Light gray background for the page */
+  color: var(--foreground); /* Dark gray-blue for the text */
   font-family: 'Arial', sans-serif;
   transition: all 0.3s ease-in-out;
   min-height: 100vh;
   margin: 0;
   padding: 0;
 }
+
 .container-bg {
-  background-color: var(--background-container);
-  box-shadow: var(--box-shadow-container);
-  border: 2px solid var(--custom-border-color); 
-}
-
-/* Links */
-a {
-  color: var(--foreground);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-a:hover {
-  color: var(--accent-color);
-}
-
-/* Buttons */
-/* button {
-  background-color: var(--button-background);
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: var(--button-hover);
-} */
-
-/* Sections with borders */
-section {
-  /* border-bottom: 2px solid var(--border-color); */
-  padding: 20px 0;
-}
-
-/* Header */
-header {
-  background-color: var(--primary-color);
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background: #1c2bd6; /* Solid blue background */
+  box-shadow: 6px 6px 15px rgba(28, 43, 214, 0.4); /* Soft blue shadow */
+  border: 2px solid var(--custom-border-color);
+  padding: 20px;
+  border-radius: 12px;
 }
 
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+p {
+  color: var(--text-color); 
+  font-weight: 500;
 }
-/* Button styles */
+h3{
+  color: var(--text-color); 
+}
+.section-title {
+  @apply relative mx-auto px-6 py-2 text-white text-lg font-semibold rounded-lg shadow-md inline-block mb-10;
+  background-color: var(--primary-color); /* Blue background for section titles */
+}
+
+.section-title::before,
+.section-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  height: 2px;
+  background: var(--primary-color); /* Blue underline accents */
+}
+
+.section-title::before {
+  left: -70px;
+}
+
+.section-title::after {
+  right: -70px;
+}
+
 .button-primary {
-  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  background-color: var(--primary-color); /* Blue for buttons */
   color: white;
   padding: 10px 20px;
   border-radius: 6px;
@@ -94,29 +73,9 @@ header {
 .button-primary:hover {
   transform: scale(1.05);
   opacity: 0.9;
+  background-color: #173db4; /* Slightly darker shade of blue for hover effect */
 }
 
-.section-title {
-  @apply relative mx-auto px-6 py-2 text-white text-lg font-semibold bg-[#0718a8] rounded-lg shadow-md inline-block mb-10;
-}
-
-.section-title::before,
-.section-title::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  width: 60px; 
-  height: 2px;
-  background: #1c2bd6;
-}
-
-.section-title::before {
-  left: -70px; 
-}
-
-.section-title::after {
-  right: -70px; 
-}
 .rounded-buttons {
   width: 24px;
   height: 24px;
@@ -124,6 +83,7 @@ header {
   background-color: inherit;
   transition: background-color 0.2s ease;
 }
+
 .rounded-buttons:hover {
-  background-color: #e60000;
+  background-color: #e60000; /* Red for button hover effect */
 }

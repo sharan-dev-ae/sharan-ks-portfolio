@@ -40,21 +40,21 @@ const Statistics = () => {
             <h3 className="text-4xl font-bold mb-2 drop-shadow-lg">
               <span>{years}+</span>
             </h3>
-            <p className="text-lg text-gray-300">Years of Experience</p>
+            <p className="text-lg">Years of Experience</p>
           </div>
 
           <div className="container-bg p-8 rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300 backdrop-blur-md">
             <h3 className="text-3xl font-semibold mb-2 drop-shadow-lg">
               <span>{projects}+</span>
             </h3>
-            <p className="text-lg text-gray-300">Projects Completed</p>
+            <p className="text-lg">Projects Completed</p>
           </div>
 
           <div className="container-bg p-8 rounded-2xl shadow-lg  hover:scale-105 transition-transform duration-300 backdrop-blur-md">
             <h3 className="text-3xl font-semibold mb-2 drop-shadow-lg">
               <span>{technologies}+</span>
             </h3>
-            <p className="text-lg text-gray-300">Technologies Mastered</p>
+            <p className="text-lg">Technologies Mastered</p>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ const Contact = () => {
       id="contact"
       className="py-24" // Reduced padding
     >
-      <div className="container mx-auto px-8 text-center">
+      <div className="container container-bg mx-auto px-8 text-center">
         {/* Section Title */}
         <h2 className="section-title mb-8">CONTACT WITH ME</h2>{" "}
         {/* Reduced bottom margin */}

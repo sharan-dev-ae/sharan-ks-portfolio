@@ -68,7 +68,7 @@ const Education = () => {
           {sortedEducations.map((education, index) => (
             <div
               key={index}
-              className={`edu-card relative w-96 p-6 rounded-lg shadow-xl border border-gray-700 bg-white/10 backdrop-blur-md transition-all duration-700 ease-out transform ${
+              className={`edu-card container-bg relative w-96 p-6 rounded-lg shadow-xl border border-gray-700 bg-white/10 backdrop-blur-md transition-all duration-700 ease-out transform ${
                 visibleItems[index]
                   ? "translate-y-0 opacity-100" // Card comes from bottom
                   : "translate-y-10 opacity-0" // Initially below and hidden

@@ -50,7 +50,7 @@ const BlogSection = () => {
           {blogs.map((blog) => (
             <div
               key={blog.id}
-              className="bg-[#251E52] p-4 rounded-lg shadow-lg border border-[#5E4A91] transform transition-all duration-300 hover:scale-105 hover:bg-[#1D1841] hover:shadow-xl hover:shadow-[#4C1D95]/60"
+              className="container-bg p-4 rounded-lg shadow-lg border border-[#5E4A91] transform transition-all duration-300 hover:scale-105 hover:bg-[#1D1841] hover:shadow-xl hover:shadow-[#4C1D95]/60"
             >
               {/* Blog Image */}
               <img
