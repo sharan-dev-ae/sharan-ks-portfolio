@@ -21,7 +21,7 @@ const Hero = () => {
             style={{ marginLeft: "60px" }}
           >
             <h1 className="text-5xl font-bold mb-8 text-black">
-              Hi, I'm{" "}
+              Hi, I&apos;m{" "}
               <span className="text-7xl text-white ">Sharan K Shaji</span>
             </h1>
 
@@ -92,7 +92,7 @@ const sharan = {
     "Redux Toolkit", "Express.js", "MongoDB", "MySQL", 
     "CI/CD", "Microservices", "Tailwind CSS", "Bootstrap", "MUI",...],
   experience: "4 Years",
-  can_code_both: true,  // Web or mobile, I’ve got it covered!
+  can_code_both: true,  // Web or mobile, I&apos;ve got it covered!
 }
   `}
             </div>
