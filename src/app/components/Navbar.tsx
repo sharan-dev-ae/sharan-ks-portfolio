@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import Link from "next/link";
 
@@ -19,17 +19,36 @@ const Navbar = () => {
         </div>
 
         <div className="hidden md:flex space-x-12">
-          <a href="#home" className="hover:text-[#66ccff] hover:underline transition">
+          <a
+            href="#home"
+            className="hover:text-[#66ccff] hover:underline transition"
+          >
             Home
           </a>
-          <a href="#projects" className="hover:text-[#66ccff] hover:underline transition">
+          <a
+            href="#projects"
+            className="hover:text-[#66ccff] hover:underline transition"
+          >
             Projects
           </a>
-          <a href="#blog" className="hover:text-[#66ccff] hover:underline transition">
+          <a
+            href="#blog"
+            className="hover:text-[#66ccff] hover:underline transition"
+          >
             Blog
           </a>
-          <a href="#contact" className="hover:text-[#66ccff] hover:underline transition">
+          <a
+            href="#contact"
+            className="hover:text-[#66ccff] hover:underline transition"
+          >
             Contact
+          </a>
+          <a
+            href="/sharan_resume.pdf"
+            download
+            className="hover:text-[#66ccff] hover:underline transition"
+          >
+            Download CV
           </a>
         </div>
 
@@ -44,16 +63,32 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden bg-[#1622A5] py-4 space-y-4">
-          <a href="#home" className="block text-center hover:text-[#66ccff] hover:underline" onClick={toggleMenu}>
+          <a
+            href="#home"
+            className="block text-center hover:text-[#66ccff] hover:underline"
+            onClick={toggleMenu}
+          >
             Home
           </a>
-          <a href="#projects" className="block text-center hover:text-[#66ccff] hover:underline" onClick={toggleMenu}>
+          <a
+            href="#projects"
+            className="block text-center hover:text-[#66ccff] hover:underline"
+            onClick={toggleMenu}
+          >
             Projects
           </a>
-          <a href="#blog" className="block text-center hover:text-[#66ccff] hover:underline" onClick={toggleMenu}>
+          <a
+            href="#blog"
+            className="block text-center hover:text-[#66ccff] hover:underline"
+            onClick={toggleMenu}
+          >
             Blog
           </a>
-          <a href="#contact" className="block text-center hover:text-[#66ccff] hover:underline" onClick={toggleMenu}>
+          <a
+            href="#contact"
+            className="block text-center hover:text-[#66ccff] hover:underline"
+            onClick={toggleMenu}
+          >
             Contact
           </a>
         </div>

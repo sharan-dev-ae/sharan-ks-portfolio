@@ -1,5 +1,5 @@
 import React from "react";
-import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa"; // Import icons
+import { FaLinkedin, FaGithub, FaTwitter, FaInstagram, FaFileDownload } from "react-icons/fa"; // Import icons
 
 const Hero = () => {
   return (
@@ -9,7 +9,7 @@ const Hero = () => {
         <div
           className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center mb-12 relative"
           style={{
-            backgroundImage: "url('/images/blue-slash-2.png')", 
+            backgroundImage: "url('/images/blue-slash-2.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
             minHeight: "75vh", // Adjust height as needed
@@ -20,45 +20,53 @@ const Hero = () => {
             style={{ marginLeft: "60px" }}
           >
             <h1 className="text-5xl font-bold mb-8 text-black">
-              Hi, I&apos;m{" "}
-              <span className="text-7xl text-white ">Sharan</span>
+              Hi, I&apos;m <span className="text-7xl text-white ">Sharan</span>
             </h1>
-            <div>
-              <div className="flex space-x-6">
-                {/* Social Media Icons */}
-                <a
-                  href="https://www.linkedin.com/in/your-linkedin-profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-yellow-500 transition-colors duration-300"
-                >
-                  <FaLinkedin size={30} />
-                </a>
-                <a
-                  href="https://github.com/your-github-profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-yellow-500 transition-colors duration-300"
-                >
-                  <FaGithub size={30} />
-                </a>
-                <a
-                  href="https://twitter.com/your-twitter-profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-yellow-500 transition-colors duration-300"
-                >
-                  <FaTwitter size={30} />
-                </a>
-                <a
-                  href="https://twitter.com/your-twitter-profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white hover:text-yellow-500 transition-colors duration-300"
-                >
-                  <FaInstagram size={30} />
-                </a>
-              </div>
+            <div className="flex items-center space-x-6">
+              {" "}
+              {/* Flex container for alignment */}
+              {/* Social Media Icons */}
+              <a
+                href="https://www.linkedin.com/in/your-linkedin-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-yellow-500 transition-colors duration-300"
+              >
+                <FaLinkedin size={30} />
+              </a>
+              <a
+                href="https://github.com/your-github-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-yellow-500 transition-colors duration-300"
+              >
+                <FaGithub size={30} />
+              </a>
+              <a
+                href="https://twitter.com/your-twitter-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-yellow-500 transition-colors duration-300"
+              >
+                <FaTwitter size={30} />
+              </a>
+              <a
+                href="https://twitter.com/your-twitter-profile"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white hover:text-yellow-500 transition-colors duration-300"
+              >
+                <FaInstagram size={30} />
+              </a>
+              {/* Download CV Button */}
+              <a
+                href="/sharan_resume.pdf"
+                download
+                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-300 ml-4 flex gap-2"
+              >
+                  <FaFileDownload size={20} />
+                Download CV
+              </a>
             </div>
           </div>
         </div>
