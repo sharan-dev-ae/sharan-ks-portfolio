@@ -59,14 +59,14 @@ const Hero = () => {
                 <FaInstagram size={30} />
               </a>
               {/* Download CV Button */}
-              <a
+              {/* <a
                 href="/sharan_resume.pdf"
                 download
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-300 ml-4 flex gap-2"
               >
                   <FaFileDownload size={20} />
                 Download CV
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

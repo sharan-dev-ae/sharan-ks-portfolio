@@ -43,13 +43,13 @@ const Navbar = () => {
           >
             Contact
           </a>
-          {/* <a
+          <a
             href="/sharan_resume.pdf"
             download
             className="hover:text-[#66ccff] hover:underline transition"
           >
             Download CV
-          </a> */}
+          </a>
         </div>
 
         <button
