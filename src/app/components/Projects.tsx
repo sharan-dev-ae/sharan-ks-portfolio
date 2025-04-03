@@ -65,52 +65,51 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <section id='projects'>
-      <div className="container mx-auto px-8 text-center">
+    <section id="projects">
+      <div className="bg-gray-100 mx-auto px-12 py-16 text-center">
         <h2 className="section-title">My Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, index) => (
-            <div
-              key={index}
-              className="container-bg p-6 rounded-lg shadow-md transform transition-all hover:scale-105 hover:shadow-xl relative border-2 border-transparent hover:border-[#5e4a91] hover:shadow-[#5e4a91] hover:shadow-lg"
-            >
-              <h3 className="text-2xl font-semibold mb-4">{project.title}</h3>
-              <p className="text-lg text-gray-400 mb-4">
-                {project.description}
-              </p>
-
-              {/* Tech Stack (Comma Separated) */}
-              <div className="mb-4">
-                <h4 className="font-semibold">Tech Stack:</h4>
-                <p className="text-sm">{project.techStack.join(", ")}</p>
-              </div>
-
-              {/* Highlights Section */}
-              <div className="mb-4">
-                <h4 className="font-semibold">Highlights:</h4>
-                <div className="flex flex-wrap gap-2 items-center justify-center py-2">
-                  {project.highlights.map((highlight, index) => (
-                    <div
-                      key={index}
-                      className="relative bg-[#5e4a91] text-white px-4 py-2 rounded-lg text-sm flex items-center max-w-xs sm:max-w-sm"
-                    >
-                      <span className="pr-6">{highlight}</span>
-                      <div className="absolute top-0.5 right-0.5 translate-x-1/2 -translate-y-1/2 text-yellow-500 text-lg">
-                        ★
-                      </div>
-                    </div>
-                  ))}
+        <div
+        key={index}
+        className="bg-white p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-2xl relative border-2 border-transparent hover:border-[#1c2bd6] hover:shadow-gray-500/50 hover:shadow-xl"
+      >
+        <h3 className="text-2xl font-semibold mb-4 text-gray-900">{project.title}</h3>
+        <p className="text-lg text-gray-600 mb-4">{project.description}</p>
+      
+        {/* Tech Stack (Comma Separated) */}
+        <div className="mb-4">
+          <h4 className="font-semibold text-gray-900">Tech Stack:</h4>
+          <p className="text-sm text-gray-600">{project.techStack.join(", ")}</p>
+        </div>
+      
+        {/* Highlights Section */}
+        <div className="mb-4">
+          <h4 className="font-semibold text-gray-900">Highlights:</h4>
+          <div className="flex flex-wrap gap-2 items-center justify-center py-2">
+            {project.highlights.map((highlight, index) => (
+              <div
+                key={index}
+                className="relative bg-[#1c2bd6] text-white px-4 py-2 rounded-lg text-sm flex items-center max-w-xs sm:max-w-sm"
+              >
+                <span className="pr-6">{highlight}</span>
+                <div className="absolute top-0.5 right-0.5 translate-x-1/2 -translate-y-1/2 text-yellow-500 text-lg">
+                  ★
                 </div>
               </div>
-
-              {/* Read More Button */}
-              <button
-                onClick={() => openModal(project)}
-                className="text-[#5e4a91] hover:text-[#5e4a91] mb-4"
-              >
-                Read More
-              </button>
-            </div>
+            ))}
+          </div>
+        </div>
+      
+        {/* Read More Button */}
+        <button
+          onClick={() => openModal(project)}
+          className="text-[#1c2bd6] hover:text-[#1c2bd6] mb-4"
+        >
+          Read More
+        </button>
+      </div>
+      
           ))}
         </div>
       </div>

@@ -29,13 +29,13 @@ const Contact = () => {
       id="contact"
       className="py-24" // Reduced padding
     >
-      <div className="container container-bg mx-auto px-8 text-center">
+      <div className="container  mx-auto px-8 text-center">
         {/* Section Title */}
         <h2 className="section-title mb-8">CONTACT WITH ME</h2>{" "}
         {/* Reduced bottom margin */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Contact Form (Left Side) */}
-          <div className="bg-[#121230] p-6 rounded-lg shadow-lg border border-[#1E1E4A]">
+          <div className=" p-6 rounded-lg shadow-lg border border-[#1E1E4A]">
             {" "}
             {/* Reduced padding */}
             <p className="text-gray-300 mb-4">
@@ -56,7 +56,7 @@ const Contact = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full p-3 bg-[#0A0A0A] border border-gray-700 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
+                  className="w-full p-3  border border-gray-700 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
                 />
               </div>
               {/* Email Input */}
@@ -69,7 +69,7 @@ const Contact = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full p-3 bg-[#0A0A0A] border border-gray-700 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
+                  className="w-full p-3  border border-gray-700 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
                 />
               </div>
               {/* Message Input */}
@@ -82,7 +82,7 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows={3} // Reduced row height
-                  className="w-full p-3 bg-[#0A0A0A] border border-gray-700 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
+                  className="w-full p-3  border border-gray-700 rounded-lg focus:ring-2 focus:ring-green-400 outline-none"
                 ></textarea>
               </div>
               {/* Submit Button */}
@@ -99,18 +99,18 @@ const Contact = () => {
 
           <div className="space-y-4">
   {/* Indian Contact Section */}
-  <div className="bg-[#121230] p-4 rounded-lg shadow-lg border border-[#1E1E4A]">
+  <div className=" p-4 rounded-lg shadow-lg border border-[#1E1E4A]">
     <h3 className="text-2xl text-[#FFBC1C] mb-3">Contact (India)</h3>
 
     <div className="flex items-center space-x-4 mb-3">
-      <div className="bg-gray-700 p-2 rounded-full">
+      <div className=" p-2 rounded-full">
         <span>📞</span>
       </div>
       <p className="text-lg text-gray-300">+91 7591997828</p>
     </div>
 
     <div className="flex items-center space-x-4 mb-3">
-      <div className="bg-gray-700 p-2 rounded-full">
+      <div className=" p-2 rounded-full">
         <span>📍</span>
       </div>
       <p className="text-lg text-gray-300">Kozhikode, Kerala, India</p>
@@ -118,18 +118,18 @@ const Contact = () => {
   </div>
 
   {/* UAE Contact Section */}
-  <div className="bg-[#121230] p-4 rounded-lg shadow-lg border border-[#1E1E4A]">
+  <div className=" p-4 rounded-lg shadow-lg border border-[#1E1E4A]">
     <h3 className="text-2xl text-[#FFBC1C] mb-3">Contact (UAE)</h3>
 
     <div className="flex items-center space-x-4 mb-3">
-      <div className="bg-gray-700 p-2 rounded-full">
+      <div className=" p-2 rounded-full">
         <span>📞</span>
       </div>
       <p className="text-lg text-gray-300">+971 50 9804082</p>
     </div>
 
     <div className="flex items-center space-x-4 mb-3">
-      <div className="bg-gray-700 p-2 rounded-full">
+      <div className=" p-2 rounded-full">
         <span>📍</span>
       </div>
       <p className="text-lg text-gray-300">Ras Al Khor, Dubai, UAE</p>
@@ -137,10 +137,10 @@ const Contact = () => {
   </div>
 
   {/* Common Email Section */}
-  <div className="bg-[#121230] p-4 rounded-lg shadow-lg border border-[#1E1E4A]">
+  <div className=" p-4 rounded-lg shadow-lg border border-[#1E1E4A]">
     <h3 className="text-2xl text-[#FFBC1C] mb-3">Email</h3>
     <div className="flex items-center space-x-4 mb-3">
-      <div className="bg-gray-700 p-2 rounded-full">
+      <div className=" p-2 rounded-full">
         <span>📧</span>
       </div>
       <p className="text-lg text-gray-300">sharansrn007@gmail.com</p>

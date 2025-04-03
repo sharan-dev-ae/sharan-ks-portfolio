@@ -4,17 +4,17 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #1c2bd6; /* Blue color for divs and elements */
+  --primary-color: #2e03e5; /* Blue color for divs and elements */
   --foreground: #333b55; /* Dark gray-blue for font color */
   --accent-color: #f0f0f0; /* Light Gray for softer accents */
   --container-bg: #f7f7f7; /* Light Gray for container background */
-  --custom-border-color: #1c2bd6; /* Blue border */
+  --custom-border-color: #2e03e5; /* Blue border */
   --box-shadow-container: 0 4px 10px rgba(28, 43, 214, 0.2); /* Light shadow for containers */
-  --text-color:#ffffff
+  --text-color:#292d33;
 }
 
 body {
-  background-color: var(--container-bg); /* Light gray background for the page */
+  /* background-color: var(--container-bg);  */
   color: var(--foreground); /* Dark gray-blue for the text */
   font-family: 'Arial', sans-serif;
   transition: all 0.3s ease-in-out;
@@ -24,9 +24,9 @@ body {
 }
 
 .container-bg {
-  background: #1c2bd6; /* Solid blue background */
-  box-shadow: 6px 6px 15px rgba(28, 43, 214, 0.4); /* Soft blue shadow */
-  border: 2px solid var(--custom-border-color);
+  background: linear-gradient(135deg, #2e03e5, #4a5fd4, #cfcfe6); /* Adds a grayish tint */
+  box-shadow: 4px 4px 12px rgba(28, 43, 214, 0.3), 2px 2px 10px rgba(50, 50, 50, 0.2); /* Adds a soft gray shadow */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Subtle white border */
   padding: 20px;
   border-radius: 12px;
 }
@@ -86,4 +86,26 @@ h3{
 
 .rounded-buttons:hover {
   background-color: #e60000; /* Red for button hover effect */
+}
+.card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  backdrop-filter: blur(10px);
+  color: black;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.edu-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease-in-out;
+}
+
+.edu-card:hover {
+  transform: scale(1.05); /* Slightly scale up the card */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a soft shadow on hover */
 }
