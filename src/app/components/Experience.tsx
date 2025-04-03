@@ -1,7 +1,7 @@
 "use client";
-import Lottie from "lottie-react";
 import React from "react";
 import animationData from "../../../public/experience_lottie.json";
+import dynamic from 'next/dynamic';
 
 const experiences = [
   {
@@ -25,6 +25,8 @@ const experiences = [
 ];
 
 const Experience = () => {
+
+const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
   return (
     <section className="py-24">
       <div className="container mx-auto px-8 text-center">
