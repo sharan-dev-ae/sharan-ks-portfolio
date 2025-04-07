@@ -1,94 +1,60 @@
+"use client";
 // app/blog/page.tsx (Blog Listing Page)
 import Link from "next/link";
+import { useData } from "../hooks/useData";
+
 
 const BlogPage = () => {
-    const blogs = [
-        {
-          id: 1,
-          title: "Blog Post 1",
-          excerpt: "This is a short excerpt of the first blog post.",
-          image: "https://via.placeholder.com/400x200",
-        },
-        {
-          id: 2,
-          title: "Blog Post 2",
-          excerpt: "This is a short excerpt of the second blog post.",
-          image: "https://via.placeholder.com/400x200",
-        },
-        {
-          id: 3,
-          title: "Blog Post 3",
-          excerpt: "This is a short excerpt of the third blog post.",
-          image: "https://via.placeholder.com/400x200",
-        },
-        {
-          id: 4,
-          title: "Blog Post 4",
-          excerpt: "This is a short excerpt of the fourth blog post.",
-          image: "https://via.placeholder.com/400x200",
-        },
-        {
-          id: 5,
-          title: "Blog Post 5",
-          excerpt: "This is a short excerpt of the fifth blog post.",
-          image: "https://via.placeholder.com/400x200",
-        },
-        {
-          id: 6,
-          title: "Blog Post 6",
-          excerpt: "This is a short excerpt of the sixth blog post.",
-          image: "https://via.placeholder.com/400x200",
-        },
-        {
-          id: 7,
-          title: "Blog Post 7",
-          excerpt: "This is a short excerpt of the seventh blog post.",
-          image: "https://via.placeholder.com/400x200",
-        },
-        {
-          id: 8,
-          title: "Blog Post 8",
-          excerpt: "This is a short excerpt of the eighth blog post.",
-          image: "https://via.placeholder.com/400x200",
-        },
-      ];
-      
+  const { blogs } = useData();
 
   return (
-    <section className="py-24 text-white bg-gradient-to-b from-[#1D1841] to-[#2B2B63]">
-      <div className="container mx-auto px-8 text-center">
-        <h2 className="section-title text-4xl mb-12">Blogs</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section className="py-24 bg-gray-50">
+      <div className="container mx-auto px-6 text-center">
+        {/* Back Button */}
+        <Link
+          href="/home"
+          className="absolute top-6 right-12 inline-block text-lg text-[#1a2fe0] bg-white px-4 py-2 rounded-lg border border-[#1c2bd6] shadow-md transition-all hover:bg-[#e1e1e1] hover:shadow-xl"
+        >
+          &larr; Back
+        </Link>
+
+        <h2 className="section-title text-4xl font-bold text-[#333] mb-12">
+          Latest Blogs
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {blogs.map((blog) => (
             <div
               key={blog.id}
-              className="bg-[#2C2C60] rounded-lg overflow-hidden shadow-lg transform transition-transform hover:scale-105 hover:shadow-2xl duration-300"
+              className="flex flex-col gap-6 p-6 bg-white rounded-lg shadow-lg border border-[#ddd] cursor-pointer hover:shadow-xl transition-all hover:bg-[#f9f9f9] mx-4"
             >
+              {/* Blog Image */}
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="w-full h-48 object-cover"
+                className="w-full h-60 object-cover rounded-lg mb-4 transition-all hover:scale-105"
               />
-              <div className="p-6 h-full">
-                <h3 className="text-xl font-semibold text-[#FFBC1C]">{blog.title}</h3>
-                <p className="text-lg text-gray-300 mt-4">{blog.excerpt}</p>
-                <Link
-                  href={`/blog/${blog.id}`}
-                  className="inline-block mt-6 text-lg text-[#FFBC1C] hover:underline transition-all duration-300"
-                >
-                  Read More
-                </Link>
-              </div>
+
+              {/* Blog Title */}
+              <h3 className="text-2xl font-semibold text-[#333] hover:text-[#1a2fe0] transition-all">
+                {blog.title}
+              </h3>
+
+              {/* Blog Description */}
+              <p className="text-md text-[#666] mt-2">{blog.description}</p>
+
+              {/* Blog Date */}
+              <p className="text-sm text-[#999] mt-4">{blog.date}</p>
+
+              {/* Read More Link */}
+              <Link
+                href={`/blog/${blog.id}`}
+                className="mt-4 inline-block text-[#1a2fe0] text-lg hover:underline"
+              >
+                Read More
+              </Link>
             </div>
           ))}
-        </div>
-        <div className="mt-8">
-          <Link
-            href="/blog"
-            className="inline-block text-xl text-[#FFBC1C] hover:underline transition-all duration-300"
-          >
-            View More Blogs
-          </Link>
         </div>
       </div>
     </section>

@@ -26,16 +26,15 @@ const Contact = () => {
 
   return (
     <section
-      id="contact"
-      className="py-24" // Reduced padding
+      id="contact"// Reduced padding
     >
-      <div className="container  mx-auto px-8 text-center">
+      <div className="bg-gray-100 px-12 py-16  mx-auto px-8 text-center">
         {/* Section Title */}
         <h2 className="section-title mb-8">CONTACT WITH ME</h2>{" "}
         {/* Reduced bottom margin */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center ">
           {/* Contact Form (Left Side) */}
-          <div className=" p-6 rounded-lg shadow-lg border border-[#1E1E4A]">
+          <div className=" p-6 rounded-lg shadow-lg border border-[#1E1E4A] bg-white">
             {" "}
             {/* Reduced padding */}
             <p className="text-gray-300 mb-4">
@@ -99,7 +98,7 @@ const Contact = () => {
 
           <div className="space-y-4">
   {/* Indian Contact Section */}
-  <div className=" p-4 rounded-lg shadow-lg border border-[#1E1E4A]">
+  <div className=" p-4 rounded-lg shadow-lg border border-[#1E1E4A] bg-white">
     <h3 className="text-2xl text-[#FFBC1C] mb-3">Contact (India)</h3>
 
     <div className="flex items-center space-x-4 mb-3">

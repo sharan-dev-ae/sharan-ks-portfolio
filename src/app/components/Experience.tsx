@@ -5,21 +5,21 @@ import dynamic from 'next/dynamic';
 
 const experiences = [
   {
-    title: "Software Engineer",
-    company: "Company 1",
+    title: "Software Developer",
+    company: "Bin Salem Design",
     location: "Dubai, UAE",
-    duration: "Jan 2021 - Present",
+    duration: "Aug 202 - Present",
   },
   {
-    title: "Full-Stack Developer",
-    company: "Company 2",
-    location: "Remote",
-    duration: "Feb 2020 - Dec 2020",
+    title: "Software Developer",
+    company: "Coddle Technologies Pvt. Ltd.",
+    location: "Kerala, India",
+    duration: "April 2022 - May 2023",
   },
   {
-    title: "Junior Developer",
-    company: "Company 3",
-    location: "Remote",
+    title: "Software Developer",
+    company: "Quest Innovative Solutions Pvt Ltd",
+    location: "Kerala, India",
     duration: "Jun 2019 - Jan 2020",
   },
 ];
@@ -28,8 +28,8 @@ const Experience = () => {
 
 const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-8 text-center">
+    <section>
+      <div className="mx-auto px-8 text-center bg-gray-100 py-12 px-12">
         <h2 className="section-title">My Experience</h2>
 
         <div className="flex items-start justify-between space-x-12 ">

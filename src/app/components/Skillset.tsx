@@ -15,16 +15,16 @@ const Skills = () => {
   ];
 
   return (
-<section className="py-24 overflow-hidden">
-  <div className="container mx-auto px-8 text-center">
+<section className="overflow-hidden">
+  <div className="px-12 py-16 mx-auto px-8 text-center bg-gray-100">
     <h2 className="section-title">My Skills</h2>
-    <Marquee speed={50} gradient={false} className="overflow-hidden" style={{minHeight:'180px'}}>
-      <div className="flex">
-        {skills.map((skill, index) => (
+    <Marquee speed={50} gradient={false} className="overflow-hidden" style={{ minHeight: '180px' }}>
+      <div className="flex whitespace-nowrap">
+        {skills.concat(skills).map((skill, index) => ( // Duplicate the skills array
           <div
             key={index}
-            className="flex flex-col items-center p-6 rounded-xl shadow-lg shadow-gray-500/40 border border-gray-600 mx-4 hover:scale-105 transition-all duration-300"
-            style={{ minWidth: "160px"}}
+            className="flex flex-col items-center bg-white p-6 rounded-xl shadow-lg shadow-gray-500/40 border border-gray-600 mx-4 hover:scale-105 transition-all duration-300"
+            style={{ minWidth: "160px" }}
           >
             <img
               src={skill.icon}
@@ -38,6 +38,8 @@ const Skills = () => {
     </Marquee>
   </div>
 </section>
+
+
 
   );
 };

@@ -9,8 +9,8 @@ const Statistics = () => {
 
   useEffect(() => {
     const yearsTarget = 4;
-    const projectsTarget = 50;
-    const technologiesTarget = 7;
+    const projectsTarget = 21;
+    const technologiesTarget = 24;
 
     const countUp = (
       target: number,
@@ -33,7 +33,7 @@ const Statistics = () => {
   }, []);
 
   return (
-<section className="py-24">
+<section>
   <div className="bg-gray-100 mx-auto text-center py-12 px-12">
     <h2 className="text-2xl mb-4 font-sans font-bold">
     Delivering High-Performance Solutions Across Industries

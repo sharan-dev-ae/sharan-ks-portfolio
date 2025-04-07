@@ -3,24 +3,25 @@ import React, { useEffect, useRef, useState } from "react";
 
 const Educations = [
   {
-    school: "Institute of DEF",
+    school: "Ilahiya HSS Chemanchery",
     degree: "High School",
-    passYear: "2015",
-    location: "London, UK",
+    passYear: "2016",
+    location: "Kerala, India",
   },
   {
-    school: "College of ABC",
-    degree: "Diploma in Software Engineering",
+    school: "Poilkave HSS",
+    degree: "Higher Secondary",
     passYear: "2018",
-    location: "California, USA",
+    location: "Kerala, India",
   },
   {
-    school: "University of XYZ",
+    school: "University of Calicut",
     degree: "Bachelor of Computer Science",
-    passYear: "2020",
-    location: "New York, USA",
+    passYear: "2021",
+    location: "Kerala, India",
   },
 ];
+
 
 const Education = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -57,15 +58,15 @@ const Education = () => {
   );
 
   return (
-<section ref={sectionRef} className="py-24 overflow-hidden">
-  <div className="container mx-auto px-8 text-center max-w-full overflow-hidden">
+<section ref={sectionRef} className="overflow-hidden">
+  <div className="py-12 px-12 bg-gray-100 mx-auto px-8 text-center max-w-full overflow-hidden">
     <h2 className="section-title">My Education</h2>
 
     <div className="relative flex gap-12 justify-center overflow-hidden pb-4">
       {sortedEducations.map((education, index) => (
         <div
           key={index}
-          className={`edu-card relative w-96 p-6 rounded-lg shadow-xl bg-white/20 backdrop-blur-md transition-all duration-700 ease-out transform ${
+          className={`edu-card relative w-96 p-6 rounded-lg shadow-xl bg-white backdrop-blur-md transition-all duration-700 ease-out transform ${
             visibleItems[index]
               ? "translate-y-0 opacity-100"
               : "translate-y-10 opacity-0"

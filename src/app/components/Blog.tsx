@@ -2,53 +2,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import { useData } from "../hooks/useData";
 
-const blogs = [
-  {
-    id: 1,
-    title: "Understanding React Hooks",
-    image: "https://via.placeholder.com/600x350?text=React+Hooks",
-    description:
-      "Learn about React hooks, including useState, useEffect, and custom hooks. These concepts are essential for modern React development.",
-    date: "January 10, 2022",
-  },
-  {
-    id: 2,
-    title: "Next.js for Beginners",
-    image: "https://via.placeholder.com/600x350?text=Next.js",
-    description:
-      "A beginner's guide to Next.js, exploring its features like static site generation, server-side rendering, and API routes.",
-    date: "March 5, 2022",
-  },
-  {
-    id: 3,
-    title: "Building a REST API with Node.js",
-    image: "https://via.placeholder.com/600x350?text=REST+API",
-    description:
-      "Learn how to build a RESTful API using Node.js and Express, including how to handle routes, requests, and responses.",
-    date: "April 20, 2022",
-  },
-  {
-    id: 4,
-    title: "Advanced JavaScript Concepts",
-    image: "https://via.placeholder.com/600x350?text=JavaScript",
-    description:
-      "Explore advanced JavaScript topics such as closures, event loop, and async programming.",
-    date: "June 15, 2022",
-  },
-  {
-    id: 5,
-    title: "Building with TypeScript",
-    image: "https://via.placeholder.com/600x350?text=TypeScript",
-    description:
-      "A complete guide to getting started with TypeScript and integrating it into your projects.",
-    date: "August 25, 2022",
-  },
-];
+
 
 const BlogSection: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
+  const { blogs } = useData();
   const prevSlide = () => {
     setCurrentIndex((prev) => (prev === 0 ? blogs.length - 3 : prev - 1));
   };
@@ -58,8 +18,8 @@ const BlogSection: React.FC = () => {
   };
 
   return (
-    <section id="blog" className="py-24 flex justify-center">
-      <div className="w-[75vw] mx-auto text-center relative">
+    <section id="blog" className="flex justify-center bg-gray-100 py-8">
+      <div className="w-[75vw] mx-auto text-center relative py-12 px-12">
         <h2 className="section-title text-4xl mb-12 text-white">
           Latest Blogs
         </h2>
@@ -76,12 +36,12 @@ const BlogSection: React.FC = () => {
         <div className="overflow-hidden w-full flex justify-center">
           <div
             className="flex transition-transform duration-500 ease-in-out"
-            style={{ transform: `translateX(-${currentIndex * 33.33}%)` }} // Show 3 cards at a time
+            style={{ transform: `translateX(-${currentIndex * 33.33}%)` }}
           >
             {blogs.map((blog) => (
               <div
                 key={blog.id}
-                className="min-w-[30%] gap-6 p-6 rounded-lg bg-[#f4f4f4] shadow-lg border border-[#ddd] cursor-pointer hover:shadow-xl transition-all hover:bg-[#e1e1e1] mx-6" // Adjusted width and added horizontal margin
+                className="min-w-[30%] gap-6 p-6 rounded-lg bg-white shadow-lg border border-[#ddd] cursor-pointer hover:shadow-xl transition-all hover:bg-[#e1e1e1] mx-6" // Adjusted width and added horizontal margin
               >
                 <img
                   src={blog.image}

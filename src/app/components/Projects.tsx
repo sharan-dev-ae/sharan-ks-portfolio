@@ -13,41 +13,66 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Project 1",
+    title: "Enterprise Resource Planning (ERP) System",
     description:
-      "A brief description of project 1. This project focuses on building scalable applications.",
-    techStack: ["React", "Node.js", "MongoDB", "Microservices", "AWS"],
-    highlights: ["Microservices", "AWS"],
+      "Developed a web app integrating core business modules like Employee Roles, Timesheet, Payroll, Task Management, Estimation, Quotation, HR, and Assets to enhance operational efficiency.",
+    techStack: [
+      "Angular",
+      "ASP.NET",
+      "SQL Server",
+      "VPS Hosting (e.g., AWS EC2, DigitalOcean)",
+    ],
+    highlights: [
+      "Real-time Collaboration",
+      "Performance Optimization",
+      "Developer Dashboard",
+      "Iterative Development",
+      "Stored Procedures",
+    ],
+
     details:
-      "This project involves developing a real-time application using React and Node.js. MongoDB is used for managing user data, while AWS ensures that the app is scalable and highly available.",
+      "This ERP system connects key business modules (HR, Assets, Employee Roles, Payroll, etc.) to streamline operations. Built with Angular, ASP.NET, and SQL Server, and hosted on GoDaddy for scalability and reliability.",
   },
   {
-    title: "Project 2",
+    title: "Employee Attendance & Travel Tracking App",
     description:
-      "Project 2 is about creating innovative solutions for real-world problems using modern tech.",
-    techStack: ["Next.js", "GraphQL", "PostgreSQL", "Docker", "CI/CD"],
-    highlights: ["CI/CD", "Docker"],
+      "Maintained and developed features for a mobile app focused on employee attendance and travel tracking, utilizing React Native and Node.js with AWS microservices integration.",
+    techStack: [
+      "React Native",
+      "Node.js",
+      "AWS Cloud Services (Lambda, API Gateway, S3)",
+    ],
+    highlights: [
+      "Feature Enhancement",
+      "Mobile Optimization",
+      "Real-time Tracking",
+      "Cloud Integration",
+      "Microservices Architecture",
+    ],
     details:
-      "This project leverages Next.js for server-side rendering and static site generation. GraphQL is used to handle API requests, while PostgreSQL provides a relational database for storing data.",
+      "Contributed to the maintenance and development of a mobile app for employee attendance and travel tracking. Integrated AWS Lambda for serverless architecture, API Gateway for routing, and S3 for data storage. Optimized the mobile experience using React Native and ensured backend stability with Node.js.",
   },
+
   {
-    title: "Project 3",
+    title: "Social Networking & Content Management System",
     description:
-      "This project involves building mobile apps with React Native, providing great user experiences.",
-    techStack: ["React Native", "Firebase", "Expo", "GraphQL"],
-    highlights: ["React Native", "Firebase"],
+      "Developed a cross-platform mobile app for social networking and content management, ensuring smooth performance across iOS and Android. Integrated key business processes and user-driven features.",
+    techStack: [
+      "React Native",
+      "Node.js",
+      "Figma (UI/UX)",
+    ],
+    highlights: [
+      "Cross-platform Development",
+      "UI/UX Implementation",
+      "Feature Optimization",
+      "User-Driven Design",
+      "Performance Tuning",
+    ],
     details:
-      "This mobile app was built using React Native, with Firebase used for authentication and real-time data sync. Expo simplifies the development process and improves productivity.",
-  },
-  {
-    title: "Project 4",
-    description:
-      "A cutting-edge solution for cloud automation using AWS and Docker, helping businesses scale efficiently.",
-    techStack: ["AWS", "Docker", "Terraform", "Kubernetes"],
-    highlights: ["Docker", "Kubernetes"],
-    details:
-      "This project automates cloud infrastructure deployment using Terraform and Docker containers. AWS services like EC2 and S3 are used to ensure the app runs in a scalable and cost-effective environment.",
-  },
+      "Designed and developed a mobile application ensuring seamless functionality across iOS and Android platforms. Translated Figma UI designs into responsive, pixel-perfect interfaces with React Native. Collaborated with cross-functional teams to implement user-driven features and optimize app performance.",
+  }
+  
 ];
 
 const Projects: React.FC = () => {
@@ -66,50 +91,55 @@ const Projects: React.FC = () => {
 
   return (
     <section id="projects">
-      <div className="bg-gray-100 mx-auto px-12 py-16 text-center">
+      <div className="mx-auto px-12 py-16 text-center bg-gray-100">
         <h2 className="section-title">My Projects</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, index) => (
-        <div
-        key={index}
-        className="bg-white p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-2xl relative border-2 border-transparent hover:border-[#1c2bd6] hover:shadow-gray-500/50 hover:shadow-xl"
-      >
-        <h3 className="text-2xl font-semibold mb-4 text-gray-900">{project.title}</h3>
-        <p className="text-lg text-gray-600 mb-4">{project.description}</p>
-      
-        {/* Tech Stack (Comma Separated) */}
-        <div className="mb-4">
-          <h4 className="font-semibold text-gray-900">Tech Stack:</h4>
-          <p className="text-sm text-gray-600">{project.techStack.join(", ")}</p>
-        </div>
-      
-        {/* Highlights Section */}
-        <div className="mb-4">
-          <h4 className="font-semibold text-gray-900">Highlights:</h4>
-          <div className="flex flex-wrap gap-2 items-center justify-center py-2">
-            {project.highlights.map((highlight, index) => (
-              <div
-                key={index}
-                className="relative bg-[#1c2bd6] text-white px-4 py-2 rounded-lg text-sm flex items-center max-w-xs sm:max-w-sm"
-              >
-                <span className="pr-6">{highlight}</span>
-                <div className="absolute top-0.5 right-0.5 translate-x-1/2 -translate-y-1/2 text-yellow-500 text-lg">
-                  ★
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-lg transform transition-all hover:scale-105 hover:shadow-2xl relative border-2 border-transparent hover:border-[#1c2bd6] hover:shadow-gray-500/50 hover:shadow-xl"
+            >
+              <h3 className="text-2xl font-semibold mb-4 text-gray-900">
+                {project.title}
+              </h3>
+              <p className="text-lg text-gray-600 mb-4 w-full max-w-prose break-words">
+                {project.description}
+              </p>
+
+              {/* Tech Stack (Comma Separated) */}
+              <div className="mb-4">
+                <h4 className="font-semibold text-gray-900">Tech Stack:</h4>
+                <p className="text-sm text-gray-600">
+                  {project.techStack.join(", ")}
+                </p>
+              </div>
+
+              {/* Highlights Section */}
+              <div className="mb-4">
+                <h4 className="font-semibold text-gray-900">Highlights:</h4>
+                <div className="flex flex-wrap gap-2 items-center justify-center py-2">
+                  {project.highlights.map((highlight, index) => (
+                    <div
+                      key={index}
+                      className="relative bg-[#1c2bd6] text-white px-4 py-2 rounded-lg text-sm flex items-center max-w-xs sm:max-w-sm"
+                    >
+                      <span className="pr-6">{highlight}</span>
+                      <div className="absolute top-0.5 right-0.5 translate-x-1/2 -translate-y-1/2 text-yellow-500 text-lg">
+                        ★
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      
-        {/* Read More Button */}
-        <button
-          onClick={() => openModal(project)}
-          className="text-[#1c2bd6] hover:text-[#1c2bd6] mb-4"
-        >
-          Read More
-        </button>
-      </div>
-      
+
+              {/* Read More Button */}
+              <button
+                onClick={() => openModal(project)}
+                className="text-[#1c2bd6] hover:text-[#1c2bd6] mb-4"
+              >
+                Read More
+              </button>
+            </div>
           ))}
         </div>
       </div>
