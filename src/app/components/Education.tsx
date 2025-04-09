@@ -59,17 +59,17 @@ const Education = () => {
 
   return (
 <section ref={sectionRef} className="overflow-hidden">
-  <div className="py-12 px-12 bg-gray-100 mx-auto px-8 text-center max-w-full overflow-hidden">
-    <h2 className="section-title">My Education</h2>
+  <div className="py-12 px-8 bg-gray-100 mx-auto text-center max-w-full">
+    <h2 className="section-title text-2xl md:text-4xl font-semibold text-gray-900 mb-8">
+      My Education
+    </h2>
 
-    <div className="relative flex gap-12 justify-center overflow-hidden pb-4">
+    <div className="relative flex flex-col md:flex-row gap-8 justify-center pb-4">
       {sortedEducations.map((education, index) => (
         <div
           key={index}
-          className={`edu-card relative w-96 p-6 rounded-lg shadow-xl bg-white backdrop-blur-md transition-all duration-700 ease-out transform ${
-            visibleItems[index]
-              ? "translate-y-0 opacity-100"
-              : "translate-y-10 opacity-0"
+          className={`edu-card relative w-full sm:w-80 md:w-96 p-6 rounded-lg shadow-xl bg-white backdrop-blur-md transition-all duration-700 ease-out transform ${
+            visibleItems[index] ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
           style={{
             transform: `translateY(${visibleItems[index] ? 0 : "30px"})`,
@@ -78,7 +78,7 @@ const Education = () => {
             willChange: "transform, opacity, box-shadow",
           }}
         >
-          <h3 className="text-xl font-semibold">{education.degree}</h3>
+          <h3 className="text-xl font-semibold text-gray-900">{education.degree}</h3>
           <p className="text-lg text-gray-400">{education.passYear}</p>
           <p className="text-lg">{education.school}</p>
           <p className="text-lg text-gray-400">{education.location}</p>
@@ -87,6 +87,7 @@ const Education = () => {
     </div>
   </div>
 </section>
+
 
   );
 };

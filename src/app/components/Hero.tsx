@@ -12,7 +12,7 @@ const Hero = () => {
         Hi, I&apos;m <span className="text-yellow-400">Sharan</span>
       </h1>
       <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl mx-auto md:mx-0">
-        I'm a full-stack developer passionate about creating impactful web
+        Im a full-stack developer passionate about creating impactful web
         applications. Always eager to learn new technologies and solve
         real-world problems.
       </p>

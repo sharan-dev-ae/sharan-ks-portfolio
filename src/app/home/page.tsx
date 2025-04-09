@@ -6,6 +6,7 @@ import Experience from "../components/Experience";
 import Hero from "../components/Hero";
 import Navbar from "../components/Navbar";
 import Projects from "../components/Projects";
+import Services from "../components/Services";
 import Skillset from "../components/Skillset";
 import Statistics from "../components/Statistics";
 
@@ -18,6 +19,7 @@ export default function Home() {
       <Statistics />
       <Skillset />
       <Experience />
+      <Services/>
       <Projects />
       <Education />
       <Blog />

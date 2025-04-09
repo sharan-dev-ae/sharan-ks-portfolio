@@ -4,7 +4,7 @@
 @tailwind utilities;
 
 :root {
-  --primary-color: #2e03e5; /* Blue color for divs and elements */
+  --primary-color: #1c2bd6; /* Blue color for divs and elements */
   --foreground: #333b55; /* Dark gray-blue for font color */
   --accent-color: #f0f0f0; /* Light Gray for softer accents */
   --container-bg: #f7f7f7; /* Light Gray for container background */

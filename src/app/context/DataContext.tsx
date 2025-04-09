@@ -12,7 +12,7 @@ interface Blog {
   slug: string;
   content: {
     introduction: string;
-    mainContent: string;
+    mainContent: { question: string; answer: string }[]; // Array of question-answer objects
     conclusion: string;
   };
 }
@@ -30,11 +30,26 @@ const initialBlogs: Blog[] = [
     content: {
       introduction:
         "In this post, we will explore React hooks in depth, including useState, useEffect, and custom hooks. React hooks help manage state and side effects in functional components, making code simpler and more readable.",
-      mainContent:
-        "React introduced hooks in version 16.8 to allow functional components to manage state and side effects, previously possible only in class components. The most commonly used hooks are useState, useEffect, and custom hooks. UseState allows you to manage state variables, while useEffect manages side effects like fetching data, subscriptions, or DOM updates.",
+      mainContent: [
+        {
+          question: "What are React Hooks?",
+          answer:
+            "React hooks are functions that allow you to use state and other React features in functional components."
+        },
+        {
+          question: "What is useState?",
+          answer:
+            "The `useState` hook lets you add state to functional components. It returns an array with the current state value and a function to update it."
+        },
+        {
+          question: "What is useEffect?",
+          answer:
+            "The `useEffect` hook allows you to perform side effects in functional components, like fetching data, updating the DOM, etc."
+        }
+      ],
       conclusion:
-        "By mastering React hooks, you can write cleaner and more maintainable code, and fully leverage the power of functional components. Custom hooks also allow you to encapsulate and reuse logic across multiple components, enhancing the modularity of your app.",
-    },
+        "By mastering React hooks, you can write cleaner and more maintainable code, and fully leverage the power of functional components. Custom hooks also allow you to encapsulate and reuse logic across multiple components, enhancing the modularity of your app."
+    }
   },
   {
     id: 2,
@@ -47,11 +62,21 @@ const initialBlogs: Blog[] = [
     content: {
       introduction:
         "Next.js is a React framework that offers various features like Static Site Generation (SSG) and Server-Side Rendering (SSR) out of the box. This makes it ideal for building SEO-friendly, fast-loading applications.",
-      mainContent:
-        "To get started with Next.js, you first need to understand its file-based routing system, where the file structure inside the 'pages' directory determines the URL paths. For example, a file named 'about.js' inside the 'pages' folder will automatically be accessible at '/about'. Next.js also makes it easy to implement API routes, enabling you to build full-stack applications.",
+      mainContent: [
+        {
+          question: "What is Next.js?",
+          answer:
+            "Next.js is a React framework that enables you to build server-rendered React applications with ease."
+        },
+        {
+          question: "How does Next.js improve performance?",
+          answer:
+            "Next.js offers features like Static Site Generation (SSG) and Server-Side Rendering (SSR) that improve page load times and SEO."
+        }
+      ],
       conclusion:
-        "Next.js is a powerful framework for building scalable web applications with enhanced performance and SEO. Its built-in support for SSG and SSR gives you the flexibility to choose the rendering method that suits your application’s needs.",
-    },
+        "Next.js is a powerful framework for building scalable web applications with enhanced performance and SEO. Its built-in support for SSG and SSR gives you the flexibility to choose the rendering method that suits your application’s needs."
+    }
   },
   {
     id: 3,
@@ -64,11 +89,21 @@ const initialBlogs: Blog[] = [
     content: {
       introduction:
         "Building a REST API with Node.js and Express is a great way to learn how to handle HTTP requests, work with databases, and create scalable APIs. In this post, we'll go over how to set up an Express server and build routes for handling various HTTP methods like GET, POST, PUT, and DELETE.",
-      mainContent:
-        "Express provides a minimal and flexible approach for building web servers and APIs. You'll learn how to define routes for CRUD operations, use middleware for request validation and authentication, and handle errors gracefully. JWT tokens are commonly used for secure authentication, allowing you to authenticate users without storing sensitive session information on the server.",
+      mainContent: [
+        {
+          question: "What is a REST API?",
+          answer:
+            "A REST API (Representational State Transfer) is an architectural style for designing networked applications, often used for creating web services."
+        },
+        {
+          question: "What is Express?",
+          answer:
+            "Express is a minimal web application framework for Node.js that simplifies routing and middleware management, making it ideal for building APIs."
+        }
+      ],
       conclusion:
-        "With Node.js and Express, you can quickly create powerful and secure REST APIs. By combining these technologies with JWT authentication, you can build robust, scalable, and secure applications that handle a variety of user interactions.",
-    },
+        "With Node.js and Express, you can quickly create powerful and secure REST APIs. By combining these technologies with JWT authentication, you can build robust, scalable, and secure applications that handle a variety of user interactions."
+    }
   },
   {
     id: 4,
@@ -81,11 +116,21 @@ const initialBlogs: Blog[] = [
     content: {
       introduction:
         "JavaScript is a powerful language with many advanced concepts that are essential for understanding how to write efficient, high-performing code. In this post, we’ll explore some of the most critical concepts like closures, the event loop, and async/await.",
-      mainContent:
-        "Closures are functions that have access to variables in their outer scope, even after that outer function has completed execution. Understanding closures is key to mastering JavaScript’s functional programming aspects. The event loop in JavaScript is responsible for handling asynchronous operations, ensuring that non-blocking code can run while other tasks are being processed. Async/await is a modern JavaScript feature that makes working with promises much cleaner and more readable.",
+      mainContent: [
+        {
+          question: "What is a closure?",
+          answer:
+            "A closure is a function that retains access to its lexical scope even after the outer function has finished execution."
+        },
+        {
+          question: "What is async/await?",
+          answer:
+            "Async/await is a feature in JavaScript that simplifies working with asynchronous code, making it more readable and easier to handle."
+        }
+      ],
       conclusion:
-        "By mastering these advanced JavaScript concepts, you can write more efficient, maintainable, and performant code. These concepts will help you understand how JavaScript handles asynchronous tasks, scoping, and closures, which are fundamental to writing complex applications.",
-    },
+        "By mastering these advanced JavaScript concepts, you can write more efficient, maintainable, and performant code. These concepts will help you understand how JavaScript handles asynchronous tasks, scoping, and closures, which are fundamental to writing complex applications."
+    }
   },
   {
     id: 5,
@@ -98,13 +143,24 @@ const initialBlogs: Blog[] = [
     content: {
       introduction:
         "TypeScript is a statically typed superset of JavaScript that offers optional type checking, which helps catch errors during development rather than at runtime. In this guide, we’ll go over how to integrate TypeScript into your projects and improve code quality with type safety.",
-      mainContent:
-        "TypeScript enhances JavaScript by providing static types, interfaces, and more. By adding types to your variables, functions, and objects, TypeScript can catch errors before the code is executed. You can also define interfaces to enforce the structure of objects and classes. The TypeScript compiler (tsc) converts your TypeScript code into standard JavaScript, ensuring compatibility with all modern browsers and Node.js environments.",
+      mainContent: [
+        {
+          question: "What is TypeScript?",
+          answer:
+            "TypeScript is a statically typed superset of JavaScript that offers optional type checking to catch errors during development."
+        },
+        {
+          question: "Why use TypeScript?",
+          answer:
+            "TypeScript helps improve code quality by providing type safety, enhanced tooling, and better collaboration for larger projects."
+        }
+      ],
       conclusion:
-        "Integrating TypeScript into your development workflow provides numerous benefits, including better error detection, improved tooling (like auto-completion and refactoring), and easier collaboration on large projects. By adopting TypeScript, you can ensure better scalability and maintainability for your applications.",
-    },
-  },
+        "Integrating TypeScript into your development workflow provides numerous benefits, including better error detection, improved tooling (like auto-completion and refactoring), and easier collaboration on large projects. By adopting TypeScript, you can ensure better scalability and maintainability for your applications."
+    }
+  }
 ];
+
 
 // Create context
 export const DataContext = createContext<{
