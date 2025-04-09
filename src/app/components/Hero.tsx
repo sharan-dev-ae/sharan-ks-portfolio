@@ -3,89 +3,72 @@ import { FaLinkedin, FaGithub, FaTwitter, FaInstagram } from "react-icons/fa"; /
 
 const Hero = () => {
   return (
-    <section className="flex items-center justify-center min-h-screen text-white">
-      <div className="flex w-full px-8 md:px-16 overflow-hidden justify-center items-center">
-        {/* Left section with background image */}
-        <div
-          className="w-full md:w-1/2 text-center md:text-left flex flex-col justify-center mb-12 relative"
-          style={{
-            backgroundImage: "url('/images/blue-slash-2.png')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            minHeight: "75vh", // Adjust height as needed
-          }}
+<section className="flex flex-col md:flex-row items-center justify-center min-h-screen text-white bg-gradient-to-b from-[#1c2bd6] to-gray-100">
+  <div className="flex flex-col md:flex-row w-full px-6 md:px-16 overflow-hidden justify-between items-center">
+    
+    {/* Left section with background color */}
+    <div className="w-full md:w-1/2 flex flex-col justify-center text-center md:text-left px-6 py-12 md:py-16 relative">
+      <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+        Hi, I&apos;m <span className="text-yellow-400">Sharan</span>
+      </h1>
+      <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-xl mx-auto md:mx-0">
+        I'm a full-stack developer passionate about creating impactful web
+        applications. Always eager to learn new technologies and solve
+        real-world problems.
+      </p>
+
+      <div className="flex justify-center md:justify-start space-x-6 mt-6">
+        {/* Social Media Icons */}
+        <a
+          href="https://www.linkedin.com/in/your-linkedin-profile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-yellow-400 transition-colors duration-300"
         >
-          <div
-            className="relative z-10 px-8 py-12"
-            style={{ marginLeft: "60px" }}
-          >
-            <h1 className="text-5xl font-bold mb-8 text-black">
-              Hi, I&apos;m <span className="text-7xl text-white ">Sharan</span>
-            </h1>
-            <div className="flex items-center space-x-6">
-              {" "}
-              {/* Flex container for alignment */}
-              {/* Social Media Icons */}
-              <a
-                href="https://www.linkedin.com/in/your-linkedin-profile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-yellow-500 transition-colors duration-300"
-              >
-                <FaLinkedin size={30} />
-              </a>
-              <a
-                href="https://github.com/your-github-profile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-yellow-500 transition-colors duration-300"
-              >
-                <FaGithub size={30} />
-              </a>
-              <a
-                href="https://twitter.com/your-twitter-profile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-yellow-500 transition-colors duration-300"
-              >
-                <FaTwitter size={30} />
-              </a>
-              <a
-                href="https://twitter.com/your-twitter-profile"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white hover:text-yellow-500 transition-colors duration-300"
-              >
-                <FaInstagram size={30} />
-              </a>
-              {/* Download CV Button */}
-              {/* <a
-                href="/sharan_resume.pdf"
-                download
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg transition-colors duration-300 ml-4 flex gap-2"
-              >
-                  <FaFileDownload size={20} />
-                Download CV
-              </a> */}
-            </div>
+          <FaLinkedin size={30} />
+        </a>
+        <a
+          href="https://github.com/your-github-profile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-yellow-400 transition-colors duration-300"
+        >
+          <FaGithub size={30} />
+        </a>
+        <a
+          href="https://twitter.com/your-twitter-profile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-yellow-400 transition-colors duration-300"
+        >
+          <FaTwitter size={30} />
+        </a>
+        <a
+          href="https://www.instagram.com/your-instagram-profile"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white hover:text-yellow-400 transition-colors duration-300"
+        >
+          <FaInstagram size={30} />
+        </a>
+      </div>
+    </div>
+
+    {/* Right section with the code editor */}
+    <div className="w-full md:w-1/2 flex justify-center px-6 py-12 md:py-16">
+      {/* Code Window inside the monitor */}
+      <div className="bg-black text-white p-6 rounded-lg shadow-lg w-full max-w-4xl h-96 overflow-y-auto">
+        <div className="flex justify-between items-center mb-4">
+          <div className="text-xs font-mono">Code Window</div>
+          <div className="flex space-x-2 ml-auto">
+            <button className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600" />
+            <button className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600" />
+            <button className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600" />
           </div>
         </div>
 
-        {/* Right section with the code editor */}
-        <div className="w-full md:w-1/2 flex justify-center">
-          {/* Code Window inside the monitor */}
-          <div className="bg-black text-white p-6 rounded-lg shadow-lg h-96 w-full md:w-160 overflow-y-auto">
-            <div className="flex justify-between space-between mb-4">
-              <div className="text-xs font-mono">Code Window</div>
-              <div className="flex space-x-2 ml-auto">
-                <button className="w-3 h-3 rounded-full bg-red-500 hover:bg-red-600" />
-                <button className="w-3 h-3 rounded-full bg-yellow-500 hover:bg-yellow-600" />
-                <button className="w-3 h-3 rounded-full bg-green-500 hover:bg-green-600" />
-              </div>
-            </div>
-
-            <div className="text-sm font-mono whitespace-pre-wrap">
-              {`
+        <div className="text-sm font-mono whitespace-pre-wrap">
+          {`
 const sharan = {
   name: "Sharan",
   profession: "Full Stack Developer",
@@ -97,12 +80,15 @@ const sharan = {
   experience: "4 Years",
   can_code_both: true,  // Web or mobile, I&apos;ve got it covered!
 }
-  `}
-            </div>
-          </div>
+          `}
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+
+
   );
 };
 
