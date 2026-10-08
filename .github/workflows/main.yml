@@ -1,0 +1,93 @@
+name: Random Daily Commits
+
+on:
+  schedule:
+    - cron: '0 1 * * *'   # 5:00 AM UAE - guaranteed commit
+    - cron: '0 5 * * *'   # 9:00 AM UAE - random
+    - cron: '0 8 * * *'   # 12:00 PM UAE - random
+    - cron: '0 11 * * *'  # 3:00 PM UAE - random
+    - cron: '0 14 * * *'  # 6:00 PM UAE - random
+    - cron: '0 18 * * *'  # 10:00 PM UAE - random
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: random-daily-commit
+  cancel-in-progress: false
+
+jobs:
+  commit:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          token: ${{ secrets.GITHUB_TOKEN }}
+          persist-credentials: true
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "sharan-dev-ae"
+          git config --global user.email "sharan-dev-ae@users.noreply.github.com"
+
+      - name: Pull latest changes
+        run: |
+          git pull --rebase origin main || true
+
+      - name: Decide whether to commit
+        id: decision
+        shell: bash
+        run: |
+          echo "Triggered schedule: ${{ github.event.schedule }}"
+
+          # Manual trigger always creates a commit
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "should_commit=true" >> "$GITHUB_OUTPUT"
+            echo "Manual run - commit will be created."
+            exit 0
+          fi
+
+          # First scheduled slot always commits.
+          # This guarantees at least one commit every day.
+          if [ "${{ github.event.schedule }}" = "0 1 * * *" ]; then
+            echo "should_commit=true" >> "$GITHUB_OUTPUT"
+            echo "Guaranteed daily commit."
+            exit 0
+          fi
+
+          # Remaining slots have a 50% chance of committing.
+          RANDOM_NUMBER=$(( RANDOM % 100 ))
+
+          echo "Random number: $RANDOM_NUMBER"
+
+          if [ "$RANDOM_NUMBER" -lt 50 ]; then
+            echo "should_commit=true" >> "$GITHUB_OUTPUT"
+            echo "Random decision: CREATE COMMIT"
+          else
+            echo "should_commit=false" >> "$GITHUB_OUTPUT"
+            echo "Random decision: SKIP"
+          fi
+
+      - name: Create random commit
+        if: steps.decision.outputs.should_commit == 'true'
+        shell: bash
+        run: |
+          TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M:%S UTC")
+
+          echo "Automated activity: $TIMESTAMP" >> random_activity.txt
+
+          git add random_activity.txt
+
+          git commit -m "Automated activity - $TIMESTAMP"
+
+          git push origin main
+
+      - name: No commit this run
+        if: steps.decision.outputs.should_commit != 'true'
+        run: |
+          echo "Skipping this scheduled commit."
